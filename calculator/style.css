@@ -1,0 +1,134 @@
+/* ---- RESET DEFAULTS ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;   /* modern, clean font */
+}
+
+/* ---- GRADIENT BACKGROUND FOR THE WHOLE PAGE ---- */
+body {
+    display: flex;
+    justify-content: center;          /* center horizontally */
+    align-items: center;              /* center vertically */
+    height: 100vh;                    /* full screen height */
+
+    /* 🔥 DARK GRADIENT BACKGROUND — deep purple fading into dark blue */
+    background: linear-gradient(135deg, #1a0a2e, #16213e, #0f3460);
+}
+
+/* ---- THE CALCULATOR BOX WITH GRADIENT & GLASS EFFECT ---- */
+.calculator {
+    /* 🔥 GRADIENT on the calculator body — dark glass-morphism look */
+    background: linear-gradient(145deg, rgba(30, 30, 50, 0.95), rgba(20, 20, 40, 0.9));
+    padding: 25px;
+    border-radius: 20px;              /* more rounded corners for modern look */
+
+    /* 🔥 SOFT GLOWING SHADOW around the calculator */
+    box-shadow:
+        0px 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0px 1px 0px rgba(255, 255, 255, 0.1);  /* subtle inner highlight */
+
+    width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.08);     /* very subtle border */
+}
+
+/* ---- THE SCREEN / DISPLAY ---- */
+#display {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    text-align: right;                /* text aligns to the RIGHT like a real calculator */
+
+    /* 🔥 DARK DISPLAY with inner shadow for a recessed look */
+    background: linear-gradient(145deg, #1a1a2e, #0f0f23);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.6); /* inner shadow = pressed-in look */
+
+    font-size: 28px;                  /* big numbers */
+    padding: 10px 15px;
+    color: #00ffc8;                   /* bright teal/cyan text — stands out on dark */
+    letter-spacing: 1px;              /* slight space between characters */
+}
+
+/* ---- BUTTON GRID (4 columns) ---- */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    gap: 12px;                              /* space between buttons */
+}
+
+/* ---- STYLE FOR EVERY BUTTON ---- */
+button {
+    height: 55px;
+    font-size: 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+
+    /* 🔥 DARK GRADIENT on regular number buttons */
+    background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
+    color: #ffffff;
+    box-shadow:
+        0px 4px 6px rgba(0, 0, 0, 0.3),
+        inset 0px 1px 0px rgba(255, 255, 255, 0.1);  /* shiny top edge */
+
+    transition: all 0.15s ease;       /* smooth hover effects */
+}
+
+/* When hovering over a number button, make it brighter */
+button:hover {
+    background: linear-gradient(145deg, #3a3a5a, #2a2a4a);
+    transform: scale(1.03);           /* slightly bigger on hover (fun effect) */
+}
+
+/* When clicking/ pressing a button, make it feel pressed */
+button:active {
+    transform: scale(0.95);           /* shrinks slightly = pressed feel */
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- OPERATOR BUTTONS (÷ × - +) — stand out with a gradient ---- */
+button.operator {
+    /* 🔥 WARM ORANGE-GOLD GRADIENT for operators */
+    background: linear-gradient(145deg, #f7971e, #ffd200);
+    color: #1a1a2e;                   /* dark text on bright button */
+    font-size: 24px;
+    box-shadow: 0px 4px 15px rgba(255, 200, 0, 0.3);  /* golden glow */
+}
+
+button.operator:hover {
+    background: linear-gradient(145deg, #ffa825, #ffe033);
+    box-shadow: 0px 4px 20px rgba(255, 200, 0, 0.5);  /* stronger glow */
+}
+
+/* ---- CLEAR BUTTON (C) — red-ish gradient to suggest "danger/delete" ---- */
+button.clear-btn {
+    /* 🔥 RED GRADIENT for the clear button */
+    background: linear-gradient(145deg, #ff416c, #ff4b2b);
+    box-shadow: 0px 4px 15px rgba(255, 65, 108, 0.3);
+}
+
+button.clear-btn:hover {
+    background: linear-gradient(145deg, #ff5277, #ff5c3e);
+    box-shadow: 0px 4px 20px rgba(255, 65, 108, 0.5);
+}
+
+/* ---- EQUALS BUTTON (=) — spans all 4 columns at the bottom ---- */
+.equals-btn {
+    grid-column: span 4;              /* stretches across all 4 columns */
+    height: 50px;
+
+    /* 🔥 GREEN-BLUE GRADIENT for the equals button */
+    background: linear-gradient(145deg, #00b09b, #96c93d);
+    color: #ffffff;
+    font-size: 26px;
+    box-shadow: 0px 4px 15px rgba(0, 176, 155, 0.3);
+}
+
+.equals-btn:hover {
+    background: linear-gradient(145deg, #00c9a7, #a8d84d);
+    box-shadow: 0px 4px 20px rgba(0, 176, 155, 0.5);
+}

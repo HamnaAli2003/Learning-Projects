@@ -1,0 +1,62 @@
+body {
+   
+    display: flex;background: #833AB4;
+background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.choice {
+    border: 3px solid transparent;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+    border-color: #007bff;
+}
+
+.choice img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.result-box {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.result-box h2 {
+    margin-top: 10px;
+    color: #333;
+}
