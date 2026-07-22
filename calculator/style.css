@@ -1,12 +1,9 @@
-/* ---- RESET DEFAULTS ---- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;   /* modern, clean font */
 }
-
-/* ---- GRADIENT BACKGROUND FOR THE WHOLE PAGE ---- */
 body {
     display: flex;
     justify-content: center;          /* center horizontally */
