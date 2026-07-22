@@ -1,0 +1,226 @@
+/* ==============================================
+   GLOBAL RESET — removes default browser spacing
+   ============================================== */
+* {
+    margin: 0;                      /* no space outside elements */
+    padding: 0;                     /* no space inside elements */
+    box-sizing: border-box;         /* width includes padding + border */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==============================================
+   PAGE BACKGROUND — full-screen gradient
+   ============================================== */
+body {
+    /* ---- GRADIENT #1: Deep purple → blue → teal ---- */
+    /* Creates a smooth color transition across the whole page */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+
+    /* Center the content both horizontally and vertically */
+    display: flex;
+    justify-content: center;        /* horizontal centering */
+    align-items: center;            /* vertical centering */
+    min-height: 100vh;              /* always fills the full viewport height */
+    padding: 20px;                  /* breathing room on small screens */
+}
+
+/* ==============================================
+   THE MAIN CARD — a glass-morphism container
+   ============================================== */
+.container {
+    /* ---- GRADIENT #2: Semi-transparent dark card ---- */
+    background: linear-gradient(145deg,
+        rgba(255, 255, 255, 0.08),   /* very faint white (top-left) */
+        rgba(255, 255, 255, 0.02)    /* almost transparent (bottom-right) */
+    );
+
+    /* Frosted glass effect: blur whatever is behind the card */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);  /* same effect for Safari */
+
+    border: 1px solid rgba(255, 255, 255, 0.15);   /* subtle border */
+    border-radius: 24px;                            /* very rounded corners */
+    padding: 40px 35px;                             /* space inside the card */
+    width: 100%;
+    max-width: 480px;               /* card won't get wider than 480px */
+
+    /* ---- Soft outer glow ---- */
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);  /* tiny highlight at top edge */
+
+    text-align: center;             /* center all text inside the card */
+}
+
+/* ==============================================
+   TITLE STYLING
+   ============================================== */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    /* ---- GRADIENT #3: Rainbow text! ---- */
+    /* The text itself gets a gradient, making each letter colorful */
+    background: linear-gradient(90deg, #f7971e, #ffd200, #00c9a7, #00b4db);
+    -webkit-background-clip: text;    /* clip the gradient to the text shape */
+    -webkit-text-fill-color: transparent;  /* make the original text transparent so gradient shows */
+    background-clip: text;            /* same for non-webkit browsers */
+}
+
+/* ==============================================
+   SUBTITLE / INSTRUCTION TEXT
+   ============================================== */
+.subtitle {
+    color: rgba(255, 255, 255, 0.6);  /* soft white, semi-transparent */
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.5;                 /* space between lines for readability */
+}
+
+/* ==============================================
+   INPUT GROUP — holds input box + buttons in a row
+   ============================================== */
+.input-group {
+    display: flex;                  /* places children side by side */
+    gap: 10px;                      /* 10px space between each child */
+    margin-bottom: 25px;
+    flex-wrap: wrap;                /* on small screens, items wrap to new line */
+}
+
+/* ==============================================
+   THE TEXT INPUT BOX
+   ============================================== */
+#userInput {
+    flex: 1;                        /* grows to fill available space */
+    min-width: 180px;               /* won't shrink below 180px */
+    padding: 14px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+
+    /* ---- Dark input with inner shadow for recessed look ---- */
+    background: linear-gradient(145deg, #1e1e3a, #16162e);
+    color: #ffffff;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);  /* pressed-in shadow */
+    outline: none;                  /* remove the default blue focus outline */
+
+    transition: box-shadow 0.3s ease; /* smooth animation on focus */
+}
+
+/* When the user clicks inside the input box, add a glowing border */
+#userInput:focus {
+    box-shadow:
+        inset 0 4px 8px rgba(0, 0, 0, 0.4),
+        0 0 0 2px rgba(0, 200, 180, 0.4);  /* teal focus ring */
+}
+
+/* The placeholder text (e.g. "e.g. racecar, madam, 12321") */
+#userInput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==============================================
+   BUTTON STYLES — shared rules for both buttons
+   ============================================== */
+button {
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;                /* hand cursor on hover */
+    transition: all 0.25s ease;     /* smooth animation for hover effects */
+    white-space: nowrap;            /* keep button text on one line */
+}
+
+/* ==============================================
+   CHECK BUTTON — green-teal gradient
+   ============================================== */
+#checkBtn {
+    /* ---- GRADIENT #4: Green → Teal ---- */
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.35);  /* matching glow */
+}
+
+/* Hover: lighter and a bit bigger */
+#checkBtn:hover {
+    background: linear-gradient(135deg, #00c9a7, #a8d84d);
+    transform: translateY(-2px);              /* lifts up slightly */
+    box-shadow: 0 6px 20px rgba(0, 176, 155, 0.5);
+}
+
+/* Click: pressed down effect */
+#checkBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 176, 155, 0.3);
+}
+
+/* ==============================================
+   CLEAR BUTTON — red-pink gradient
+   ============================================== */
+#clearBtn {
+    /* ---- GRADIENT #5: Red → Pink ---- */
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+}
+
+#clearBtn:hover {
+    background: linear-gradient(135deg, #ff5277, #ff5c3e);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 65, 108, 0.5);
+}
+
+#clearBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(255, 65, 108, 0.3);
+}
+
+/* ==============================================
+   RESULT DISPLAY AREA
+   ============================================== */
+#result {
+    padding: 20px;
+    border-radius: 16px;
+    min-height: 60px;               /* always has some height even when empty */
+
+    /* ---- Semi-transparent dark background ---- */
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Center the text inside */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* ---- Default placeholder text (before checking) ---- */
+.placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* ---- When the result says "YES, it's a palindrome!" ---- */
+.success {
+    color: #96c93d;                 /* green text */
+}
+
+/* ---- When the result says "NO, it's not a palindrome!" ---- */
+.failure {
+    color: #ff416c;                 /* red text */
+}
+
+/* ---- Fun facts / extra info shown below the result ---- */
+.info-text {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 8px;
+}

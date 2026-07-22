@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+
+    <!-- Link to the CSS stylesheet for all the pretty styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================
+         THE MAIN CARD — a centered box that holds
+         everything the user sees and interacts with
+         ============================================ -->
+    <div class="container">
+
+        <!-- ---- TITLE ---- -->
+        <h1>🔁 Palindrome Checker</h1>
+
+        <!-- ---- SUBTITLE / INSTRUCTION ---- -->
+        <p class="subtitle">
+            Enter a word, number, or phrase to check if it reads the same forwards and backwards.
+        </p>
+
+        <!-- ---- INPUT AREA ---- -->
+        <div class="input-group">
+            <!-- The text box where user types their word/phrase -->
+            <!-- id="userInput" lets JavaScript easily find this element -->
+            <input type="text" id="userInput" placeholder="e.g. racecar, madam, 12321">
+
+            <!-- CHECK BUTTON — runs the checkPalindrome() function when clicked -->
+            <button id="checkBtn">Check</button>
+
+            <!-- CLEAR BUTTON — resets everything back to the beginning -->
+            <button id="clearBtn">Clear</button>
+        </div>
+
+        <!-- ---- RESULT DISPLAY AREA ---- -->
+        <!-- This is where the answer (yes/no/fun message) will appear -->
+        <!-- id="result" lets JavaScript easily find and update this element -->
+        <div id="result">
+            <!-- Default message shown when the page first loads -->
+            <span class="placeholder">Waiting for input...</span>
+        </div>
+
+    </div>
+
+    <!-- Link to the JavaScript file that contains all the logic -->
+    <script src="app.js"></script>
+</body>
+</html>
