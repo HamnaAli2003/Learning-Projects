@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="startScreen" class="screen">
+            <h1>🧠 JavaScript Quiz</h1>
+            <p class="subtitle">Test your JavaScript knowledge with 20 questions!</p>
+
+            <div class="rules">
+                <p>📌 <strong>Rules:</strong></p>
+                <ul>
+                    <li>20 JavaScript Multiple Choice Questions</li>
+                    <li>Each question has 4 options</li>
+                    <li>Select one answer and click <strong>Next</strong></li>
+                    <li>You can go <strong>Back</strong> to change your answer</li>
+                    <li>See your score at the end! 🏆</li>
+                </ul>
+            </div>
+
+            <button id="startBtn">Start Quiz 🚀</button>
+        </div>
+
+       
+        <div id="quizScreen" class="screen hidden">
+
+           
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+
+            <p id="questionCounter" class="question-counter"></p>
+            <h2 id="questionText"></h2>
+
+      
+            <div id="optionsContainer" class="options"></div>
+
+           
+            <div class="nav-buttons">
+                <button id="prevBtn" class="nav-btn secondary">⬅ Back</button>
+                <button id="nextBtn" class="nav-btn primary">Next ➡</button>
+            </div>
+
+        </div>
+
+       
+        <div id="resultScreen" class="screen hidden">
+
+            <div id="resultEmoji" class="result-emoji">🏆</div>
+            <h1 id="resultText"></h1>
+            <p id="resultDetail" class="result-detail"></p>
+            <p id="resultMessage" class="result-message"></p>
+
+            <div id="resultSummary" class="result-summary"></div>
+
+            <button id="restartBtn">Play Again 🔄</button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
